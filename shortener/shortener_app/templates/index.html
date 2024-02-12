@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URLS</title>
+</head>
+<body>
+    <h1>Welcome to url shortener</h1>
+    <h2>
+        <form method="post">
+            {% csrf_token %}
+            <label>Enter url:</label>
+            <input type="text" name="url">
+            <input type="submit" value="submit">
+        </form>
+        <BR></BR>
+        program gowing to redirect you to shorten url stats if you klick on it
+        <ul>
+            {% for i in x %}
+                <li><a href="{% url 'stats' i.short_urls %}">{{i.long_urls}}</a></li>
+            {% endfor %}
+        </ul>
+    </h2>
+</body>
+</html>
